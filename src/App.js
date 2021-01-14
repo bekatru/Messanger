@@ -1,9 +1,10 @@
 import "./App.scss";
+import Header from "./components/navbar/Header";
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Messanger</h1>
+			<Header />
 		</div>
 	);
 }
