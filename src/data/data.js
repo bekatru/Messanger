@@ -6,7 +6,6 @@ const user = {
   notifications: { messages: 4, bell: 32 },
   recent: ["#ва-кф", "#ва-юд", "#ва-аб"],
 };
-
 const users = [
   { name: "Валерий", surname: "Алексеев", id: "#ва" },
   { name: "Алексей", surname: "Мусаханов", id: "#ам" },
@@ -21,17 +20,7 @@ const users = [
   { name: "Бекзат", surname: "Аматахунов", id: "#ба" },
   { name: "Энди", surname: "Андерсон", id: "#эа" },
 ];
-
 const groups = [
-  { name: "Руководство", participants: [], messages: [] },
-  { name: "Бухгалтерия", participants: [], messages: [] },
-  { name: "Маркетинг", participants: [], messages: [] },
-  { name: "Аналитика", participants: [], messages: [] },
-  {
-    name: "Разработка и интеграция",
-    participants: ["#ва", "#ам", "#юд", "#сз", "#аг"],
-    messages: [],
-  },
   {
     name: "Общий чат",
     participants: [
@@ -96,8 +85,16 @@ const groups = [
       },
     ],
   },
+  { name: "Руководство", participants: [], messages: [] },
+  { name: "Бухгалтерия", participants: [], messages: [] },
+  { name: "Маркетинг", participants: [], messages: [] },
+  { name: "Аналитика", participants: [], messages: [] },
+  {
+    name: "Разработка и интеграция",
+    participants: ["#ва", "#ам", "#юд", "#сз", "#аг"],
+    messages: [],
+  },
 ];
-
 const chats = [
   {
     id: "#ва-кф",
@@ -115,3 +112,10 @@ const chats = [
     messages: [],
   },
 ];
+
+export const store = {
+  user,
+  users,
+  groups,
+  chats,
+};
