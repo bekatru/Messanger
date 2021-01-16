@@ -1,0 +1,39 @@
+header {
+	@include flex(row, center, flex-start);
+	height: 72px;
+	padding: 0 30px;
+	background-color: #1b3a59;
+}
+
+.logo {
+	@include flex(row, center, space-between);
+	width: 120px;
+	height: 34px;
+	cursor: pointer;
+
+	p {
+		text-align: center;
+		font-size: 28px;
+		line-height: 34px;
+		font-weight: 400;
+		color: #ffffff;
+	}
+}
+
+.nav-items {
+	@include flex(row, center, space-between);
+	color: white;
+	margin: 0 42px;
+
+	div {
+		@include flex(column, center, center);
+		height: 72px;
+		padding: 0 20px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.active {
+		background-color: #ffffff1a;
+	}
+}
