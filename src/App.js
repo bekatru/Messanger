@@ -7,6 +7,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<ChatItem></ChatItem>
+			<div>YO</div>
 		</div>
 	);
 }
