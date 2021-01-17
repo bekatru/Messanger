@@ -1,0 +1,50 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+//MIXINS
+@mixin flex($flex, $direction, $align, $justify) {
+	display: $flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin icon($height, $width, $url) {
+	height: $height;
+	width: $width;
+	background-image: $url;
+}
+
+//Colors
+$primary_blue: #007af4;
+$primary_dark_blue: #1b3a59;
+$primary_light: #f5f9fc;
+$primary_red: #d61a1a;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	max-width: 1440px;
+	margin: 0 auto;
+	font-family: Inter;
+}
+
+.avatar {
+	@include flex(flex, row, center, center);
+	background-color: $primary_blue;
+	border-radius: 50%;
+	color: white;
+
+	&.L {
+		width: 38px;
+		height: 38px;
+		border: 2px solid #ffffff33;
+	}
+	&.S {
+		width: 23px;
+		height: 23px;
+	}
+}
