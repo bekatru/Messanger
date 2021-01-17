@@ -31,20 +31,3 @@ body {
 	margin: 0 auto;
 	font-family: Inter;
 }
-
-.avatar {
-	@include flex(flex, row, center, center);
-	background-color: $primary_blue;
-	border-radius: 50%;
-	color: white;
-
-	&.L {
-		width: 38px;
-		height: 38px;
-		border: 2px solid #ffffff33;
-	}
-	&.S {
-		width: 23px;
-		height: 23px;
-	}
-}

@@ -1,0 +1,27 @@
+.searchbar {
+	@include flex(flex, row, center, flex-start);
+	box-sizing: border-box;
+	height: 57px;
+	width: 350px;
+	border: 1px solid #1b3a5933;
+	padding: 0 25px;
+
+	input {
+		width: 210px;
+		height: 20px;
+		border: none;
+		outline: none;
+	}
+}
+
+.icons {
+	@include flex(flex, row, center, flex-end);
+	width: 90px;
+	.edit {
+		opacity: 0.16;
+		margin-left: 20px;
+	}
+	.search {
+		margin-left: 20px;
+	}
+}

@@ -1,0 +1,26 @@
+.chatlist {
+	box-sizing: border-box;
+	width: 350px;
+	padding: 0 25px;
+	border: 1px solid #1b3a5933;
+
+	p {
+		font: normal normal normal 11px/14px Inter;
+		letter-spacing: 1.54px;
+		margin: 12px 0 6px 0;
+	}
+}
+
+.chat {
+	@include flex(flex, row, center, flex-start);
+	margin: 6px 0;
+
+	p {
+		font: normal normal normal 14px/24px Inter;
+		margin-left: 8px;
+	}
+
+	&.sub {
+		margin-left: 24px;
+	}
+}
