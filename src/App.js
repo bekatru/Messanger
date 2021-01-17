@@ -1,13 +1,17 @@
-import React from "react";
-import "./App.scss";
+import React, { useState } from "react";
+// Components
 import Layout from "./Layout";
-
-function App() {
-	return (
-		<div className="App">
-			<Layout />
-		</div>
-	);
-}
+// Data
+import { store } from "./data/data";
+// Styles
+import "./App.scss";
+const App = () => {
+  const [state, setState] = useState(store);
+  return (
+    <div className="App">
+      <Layout />
+    </div>
+  );
+};
 
 export default App;
