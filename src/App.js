@@ -12,9 +12,14 @@ import { store } from "./data/data";
 // Styles
 import "./App.scss";
 const App = () => {
+	console.log("mount");
 	const [state, setState] = useState(store);
 	const [query, setQuery] = useState("");
 	const [activeChat, setActiveChat] = useState(state.groups[0]);
+
+	const handleSend = (data) => {
+		console.log(data);
+	};
 	return (
 		<div className="App">
 			<Nav user={state.user} />
@@ -26,7 +31,7 @@ const App = () => {
 				<div>
 					<Header data={activeChat} />
 					<Thread chat={activeChat} users={state.users} user={state.user.id} />
-					<Input />
+					<Input handleSend={(data) => handleSend(data)} />
 				</div>
 			</div>
 		</div>
