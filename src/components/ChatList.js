@@ -1,6 +1,8 @@
 import React from "react";
 import Avatar from "./Avatar";
 
+import arrow from "../icons/arrow-down.svg";
+
 const ChatList = ({ data: { groups, chats, users }, query }) => {
 	const findUser = (id) => {
 		return users.find((user) => user.id === id);
@@ -8,21 +10,25 @@ const ChatList = ({ data: { groups, chats, users }, query }) => {
 
 	// Renders Groups
 	const groupChats = groups.map((group) => {
+		const sub = group.participants.map((id) => {
+			const { name, surname } = findUser(id);
+			return (
+				<div className="chat sub" key={id}>
+					<Avatar data={{ name, surname }} size="S" />
+					<p>{name + " " + surname}</p>
+				</div>
+			);
+		});
 		return (
 			<div key={group.name}>
 				<div className="chat">
 					<Avatar data={group} size="S" />
 					<p>{group.name}</p>
+					{sub.length ? (
+						<img src={arrow} alt="arrow" className="dropdown" />
+					) : null}
 				</div>
-				{group.participants.map((id) => {
-					const { name, surname } = findUser(id);
-					return (
-						<div className="chat sub" key={id}>
-							<Avatar data={{ name, surname }} size="S" />
-							<p>{name + " " + surname}</p>
-						</div>
-					);
-				})}
+				{sub}
 			</div>
 		);
 	});

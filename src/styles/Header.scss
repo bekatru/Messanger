@@ -1,0 +1,14 @@
+.header {
+	@include flex(flex, row, center, flex-start);
+	box-sizing: border-box;
+	padding: 0 30px;
+	width: 1090px;
+	height: 78px;
+	border: 1px solid #1b3a5933;
+}
+
+.tools {
+	@include flex(flex, row, center, space-between);
+	opacity: 0.25;
+	margin-left: auto;
+}

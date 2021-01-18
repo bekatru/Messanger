@@ -1,0 +1,77 @@
+.message {
+	@include flex(flex, row, flex-start, flex-start);
+	margin-top: 32px;
+
+	p {
+		font: normal normal normal 14px/20px Inter;
+		letter-spacing: 0px;
+	}
+	&_body {
+		box-sizing: border-box;
+		width: 450px;
+		padding: 15px;
+		margin-left: 12px;
+		border-radius: 8px;
+		background: white;
+		box-shadow: 0px 1px 2px #00000029;
+		position: relative;
+
+		&.left {
+			margin-left: auto;
+		}
+	}
+}
+
+.info {
+	@include flex(flex, row, center, flex-end);
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+	&_time {
+		font: normal normal normal 12px/20px Inter;
+		letter-spacing: 0px;
+		color: #707070;
+		opacity: 0.4;
+		margin-left: 15px;
+	}
+
+	&_likes {
+		@include flex(flex, row, center, center);
+		margin-left: 15px;
+		width: 36px;
+		height: 20px;
+		background: #e2e2e240 0% 0% no-repeat padding-box;
+		border-radius: 8px;
+		text-align: center;
+		font: normal normal normal 12px/20px Inter;
+	}
+	&_status {
+		margin-left: 15px;
+	}
+}
+
+.quote {
+	border-left: 1px solid $primary_blue;
+	padding-left: 10px;
+	margin-bottom: 8px;
+
+	&_header {
+		@include flex(flex, row, center, flex-start);
+
+		&_name {
+			font: normal normal normal 12px/20px Inter;
+			color: $primary_blue;
+		}
+
+		&_date {
+			font: normal normal normal 12px/20px Inter;
+			letter-spacing: 0px;
+			color: #707070;
+			opacity: 0.4;
+		}
+	}
+
+	&_body {
+		font: normal normal normal 12px/20px Inter;
+	}
+}
