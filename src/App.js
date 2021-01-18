@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 import ChatList from "./components/ChatList";
 import Header from "./components/Header";
 import Thread from "./components/Thread";
+import Input from "./components/Input";
 
 // Data
 import { store } from "./data/data";
@@ -25,6 +26,7 @@ const App = () => {
 				<div>
 					<Header data={activeChat} />
 					<Thread chat={activeChat} users={state.users} user={state.user.id} />
+					<Input />
 				</div>
 			</div>
 		</div>

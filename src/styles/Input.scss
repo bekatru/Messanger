@@ -1,0 +1,45 @@
+.input {
+	@include flex(flex, row, center, space-between);
+	box-sizing: border-box;
+	width: 1090px;
+	height: 70px;
+	padding: 0 30px;
+	border: 1px solid #1b3a5933;
+	border-top: none;
+
+	&_message {
+		border: none;
+		outline: none;
+		font: normal normal normal 14px/20px Inter;
+		width: 765px;
+		height: 40px;
+	}
+	&_tools {
+		@include flex(flex, row, center, space-between);
+		width: 107+67+20px;
+		img {
+			opacity: 0.4;
+		}
+	}
+	button {
+		width: 107px;
+		height: 38px;
+		color: white;
+		outline: none;
+
+		border: 1px solid #007af4;
+		cursor: pointer;
+		font: normal normal medium 14px/17px Inter;
+		background-color: #007af4;
+		border-radius: 5px;
+		transition: all ease-in 100ms;
+	}
+
+	button:hover {
+		background: none;
+		color: #007af4;
+	}
+	button:active {
+		transform: scale(0.98);
+	}
+}

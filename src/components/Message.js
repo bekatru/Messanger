@@ -3,6 +3,8 @@ import Avatar from "./Avatar";
 
 //icons
 import thumbsup from "../icons/thumbsup.svg";
+import check from "../icons/check-line.svg";
+import checked from "../icons/check-double.svg";
 
 const Message = ({ users, message, user }) => {
 	const findUser = (id) => {
@@ -11,6 +13,11 @@ const Message = ({ users, message, user }) => {
 	const sender = findUser(message.sender);
 
 	const info = () => {
+		const status = message.checked ? (
+			<img className="check" width="20" src={checked} alt="checked" />
+		) : (
+			<img className="check" width="20" src={check} alt="check" />
+		);
 		const likes = message.likes ? (
 			<div className="info_likes">
 				<img width="16" src={thumbsup} alt="+" />
@@ -21,6 +28,7 @@ const Message = ({ users, message, user }) => {
 			<div className="info">
 				{likes}
 				<p className="info_time">14:23</p>
+				{message.sender === user && status}
 			</div>
 		);
 	};
@@ -32,7 +40,7 @@ const Message = ({ users, message, user }) => {
 			<div className="quote">
 				<div className="quote_header">
 					<p className="quote_header_name">{name + " " + surname}</p>
-					<p className="quote_header_date">12.12.12 12:12</p>
+					<p className="quote_header_date">12.10.2020 12:12</p>
 				</div>
 				<p className="quote_body">{data.body}</p>
 			</div>
