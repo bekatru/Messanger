@@ -1,10 +1,13 @@
 .chatlist {
 	box-sizing: border-box;
-	width: 350px;
-	height: 739px;
+	height: 738px;
 	padding: 0 25px;
 	border: 1px solid #1b3a5933;
-	overflow: hidden;
+	overflow: scroll;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
 	p {
 		font: normal normal normal 11px/14px Inter;
@@ -14,7 +17,7 @@
 }
 
 .chat {
-	@include flex(flex, row, center, flex-start);
+	@include flex(row, center, flex-start);
 	margin: 12px 0;
 	p {
 		font: normal normal normal 14px/24px Inter;
@@ -25,12 +28,8 @@
 		cursor: pointer;
 	}
 
-	&.sub {
-		margin-left: 24px;
-
-		&.close {
-			display: none;
-		}
+	&_children {
+		padding-left: 25px;
 	}
 }
 

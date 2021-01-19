@@ -1,8 +1,7 @@
 .searchbar {
-	@include flex(flex, row, center, flex-start);
+	@include flex(row, center, flex-start);
 	box-sizing: border-box;
-	height: 57px;
-	width: 350px;
+	height: 60px;
 	border: 1px solid #1b3a5933;
 	padding: 0 25px;
 
@@ -15,13 +14,18 @@
 }
 
 .icons {
-	@include flex(flex, row, center, flex-end);
+	@include flex(row, center, flex-end);
 	width: 90px;
 	.edit {
 		opacity: 0.16;
 		margin-left: 20px;
+		width: 17px;
 	}
 	.search {
 		margin-left: 20px;
+		width: 17px;
+	}
+	.clear {
+		cursor: pointer;
 	}
 }

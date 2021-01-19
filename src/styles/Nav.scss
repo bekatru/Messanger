@@ -1,39 +1,39 @@
 header {
-	@include flex(flex, row, center, flex-start);
+	@include flex(row, center, flex-start);
 	background-color: $primary_dark_blue;
 	height: 70px;
 	padding: 0 30px;
-}
 
-.logo {
-	@include flex(flex, row, center, space-between);
-	width: 120px;
+	.logo {
+		@include flex(row, center, space-between);
+		width: 120px;
 
-	&_text {
-		font: normal normal normal 28px/34px Inter;
-		color: #ffffff;
-	}
-}
-
-nav {
-	margin-left: 42px;
-	a {
-		height: 100%;
-		color: #ffffff;
-		text-decoration: none;
-		padding: 25px 20px;
-		font-weight: 500;
-		&:hover {
-			background-color: #ffffff1a;
+		&_text {
+			font: normal normal normal 28px/34px Inter;
+			color: #ffffff;
 		}
-		&.active {
-			background-color: #ffffff1a;
+	}
+
+	nav {
+		margin-left: 42px;
+		a {
+			height: 100%;
+			color: #ffffff;
+			text-decoration: none;
+			padding: 25px 20px;
+			font-weight: 500;
+			&:hover {
+				background-color: #ffffff1a;
+			}
+			&.active {
+				background-color: #ffffff1a;
+			}
 		}
 	}
 }
 
 .notifications {
-	@include flex(flex, row, center, space-between);
+	@include flex(row, center, space-between);
 	width: 100px;
 	margin-left: auto;
 	margin-right: 30px;
@@ -46,7 +46,7 @@ nav {
 		}
 
 		p {
-			@include flex(flex, row, center, center);
+			@include flex(row, center, center);
 			height: 21px;
 			width: 21px;
 			position: absolute;
@@ -62,7 +62,7 @@ nav {
 }
 
 .userinfo {
-	@include flex(flex, column, flex-start, space-around);
+	@include flex(column, flex-start, space-around);
 	height: 40px;
 	margin-left: 10px;
 }

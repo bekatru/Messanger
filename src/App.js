@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // Components
 import Nav from "./components/Nav";
 import SearchBar from "./components/SearchBar";
@@ -12,30 +12,58 @@ import { store } from "./data/data";
 // Styles
 import "./App.scss";
 const App = () => {
-	console.log("mount");
 	const [state, setState] = useState(store);
 	const [query, setQuery] = useState("");
-	const [activeChat, setActiveChat] = useState(state.groups[0]);
+
+	// Fetch Data
+	useEffect(() => {
+		fetch("http://localhost:3030/")
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setState(data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
 
 	const handleSend = (data) => {
-		console.log(data);
+		fetch("http://localhost:3030/", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.json())
+			.then((data) => setState(data))
+			.catch((err) => console.log(err));
 	};
-	return (
+
+	let application = <div>Loading</div>;
+	application = (
 		<div className="App">
 			<Nav user={state.user} />
 			<div className="wrapper">
 				<div>
 					<SearchBar setQuery={(query) => setQuery(query)} />
-					<ChatList data={state} query={query} />
+					<ChatList
+						data={state}
+						query={query}
+						// setActiveChat={() => setActiveChat(data)}
+					/>
 				</div>
 				<div>
-					<Header data={activeChat} />
-					<Thread chat={activeChat} users={state.users} user={state.user.id} />
+					<Header data={state.groups[0]} />
+					<Thread
+						chat={state.groups[0]}
+						users={state.users}
+						user={state.user.id}
+					/>
 					<Input handleSend={(data) => handleSend(data)} />
 				</div>
 			</div>
 		</div>
 	);
+
+	return application;
 };
 
 export default App;

@@ -1,60 +1,64 @@
-import React from "react";
-import Avatar from "./Avatar";
-
-import arrow from "../icons/arrow-down.svg";
+import React, { useEffect, useState } from "react";
+import ChatItem from "./ChatItem";
 
 const ChatList = ({ data: { groups, chats, users }, query }) => {
+	const [searchResults, setSearchResults] = useState([]);
+	useEffect(() => {
+		const a = groups.filter(
+			(group) => group.name.toUpperCase().search(query.toUpperCase()) > -1
+		);
+		const b = users.filter(
+			(user) =>
+				user.name.toUpperCase().search(query.toUpperCase()) > -1 ||
+				user.surname.toUpperCase().search(query.toUpperCase()) > -1
+		);
+		const results = a.concat(b);
+		setSearchResults(results);
+	}, [query, groups, users]);
 	const findUser = (id) => {
 		return users.find((user) => user.id === id);
 	};
 
-	// Renders Groups
-	const groupChats = groups.map((group) => {
-		const sub = group.participants.map((id) => {
-			const { name, surname } = findUser(id);
-			return (
-				<div className="chat sub" key={id}>
-					<Avatar data={{ name, surname }} size="S" />
-					<p>{name + " " + surname}</p>
-				</div>
-			);
-		});
-		return (
-			<div key={group.name}>
-				<div className="chat">
-					<Avatar data={group} size="S" />
-					<p>{group.name}</p>
-					{sub.length ? (
-						<img src={arrow} alt="arrow" className="dropdown" />
-					) : null}
-				</div>
-				{sub}
-			</div>
-		);
+	// Render Groups Chats
+	const groupChats = groups.map((group, index) => {
+		// Escape Common Chat Room
+		if (!index) return null;
+		// Render Group Chat Participants
+		const sub = group.participants.length
+			? group.participants.map((item, index) => (
+					<ChatItem data={findUser(item)} key={index} />
+			  ))
+			: null;
+
+		return <ChatItem data={group} children={sub} key={index} />;
 	});
 
-	// Renders Recent
-	const recentChats = chats.map((chat) => {
-		const { name, surname } = findUser(chat.mate);
+	// Render Recent Chats
+	const recentChats = chats.map((chat, index) => (
+		<ChatItem data={findUser(chat.mate)} key={index} />
+	));
+
+	if (!query.length) {
 		return (
-			<div className="chat" key={name + surname}>
-				<Avatar data={{ name, surname }} size="S" />
-				<p>{name + " " + surname}</p>
+			<div className="chatlist">
+				{query.length ? (
+					searchResults.map((item, index) => (
+						<ChatItem key={index} data={item} />
+					))
+				) : (
+					<>
+						<ChatItem data={groups[0]} />
+						<p>ОТДЕЛЫ</p>
+						{groupChats}
+						<p>ПОСЛЕДНИЕ ЧАТЫ</p>
+						{recentChats}
+					</>
+				)}
 			</div>
 		);
-	});
-	return (
-		<div className="chatlist">
-			<p>ОТДЕЛЫ</p>
-			{groupChats.filter(
-				(chat) => chat.key.toUpperCase().search(query.toUpperCase()) > -1
-			)}
-			<p>ПОСЛЕДНИЕ ЧАТЫ</p>
-			{recentChats.filter(
-				(chat) => chat.key.toUpperCase().search(query.toUpperCase()) > -1
-			)}
-		</div>
-	);
+	} else {
+		return searchResults.map((item, index) => <ChatItem data={item} />);
+	}
 };
 
 export default ChatList;

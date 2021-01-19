@@ -38,7 +38,7 @@ html {
 //HEADER
 
 header {
-	@include flex(flex, row);
+	@include flex(row);
 	height: 70px;
 	background-color: $primary_dark_blue;
 }
@@ -46,7 +46,7 @@ header {
 //LOGO
 
 .logo {
-	@include flex(flex, row);
+	@include flex(row);
 	align-items: center;
 	margin-left: 30px;
 	margin-right: 42px;

@@ -1,5 +1,5 @@
 .input {
-	@include flex(flex, row, center, space-between);
+	@include flex(row, center, space-between);
 	box-sizing: border-box;
 	width: 1090px;
 	height: 70px;
@@ -15,7 +15,7 @@
 		height: 40px;
 	}
 	&_tools {
-		@include flex(flex, row, center, space-between);
+		@include flex(row, center, space-between);
 		width: 107+67+20px;
 		img {
 			opacity: 0.4;

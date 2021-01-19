@@ -1,6 +1,7 @@
 .message {
-	@include flex(flex, row, flex-start, flex-start);
-	margin-top: 32px;
+	@include flex(row, flex-start, flex-start);
+	margin-top: 22px;
+	position: relative;
 
 	p {
 		font: normal normal normal 14px/20px Inter;
@@ -14,16 +15,14 @@
 		border-radius: 8px;
 		background: white;
 		box-shadow: 0px 1px 2px #00000029;
-		position: relative;
-
-		&.left {
-			margin-left: auto;
-		}
+	}
+	&.left {
+		align-self: flex-end;
 	}
 }
 
 .info {
-	@include flex(flex, row, center, flex-end);
+	@include flex(row, center, flex-end);
 	position: absolute;
 	bottom: 8px;
 	right: 8px;
@@ -36,7 +35,7 @@
 	}
 
 	&_likes {
-		@include flex(flex, row, center, center);
+		@include flex(row, center, center);
 		margin-left: 15px;
 		width: 36px;
 		height: 20px;
@@ -60,7 +59,7 @@
 	margin-bottom: 8px;
 
 	&_header {
-		@include flex(flex, row, center, flex-start);
+		@include flex(row, center, flex-start);
 
 		&_name {
 			font: normal normal normal 12px/20px Inter;
@@ -79,4 +78,12 @@
 	&_body {
 		font: normal normal normal 12px/20px Inter;
 	}
+}
+
+.timecheck {
+	text-align: center;
+	font: normal normal normal 14px/20px Inter;
+	opacity: 0.4;
+	align-self: center;
+	margin: 28px auto 6px;
 }

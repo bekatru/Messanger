@@ -1,5 +1,5 @@
 .avatar {
-	@include flex(flex, row, center, center);
+	@include flex(row, center, center);
 	background-color: $primary_blue;
 	border-radius: 50%;
 	color: white;

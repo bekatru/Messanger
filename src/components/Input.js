@@ -10,19 +10,24 @@ const Input = ({ handleSend }) => {
 	const { register, handleSubmit } = useForm({});
 
 	const onSubmit = (data) => {
-		data.message = value;
+		if (value === "") return;
+		data = {
+			id: "#" + Math.random().toString(20).substr(2, 6),
+			sender: "#ва",
+			likes: 0,
+			datetime: Date(),
+			quote: null,
+			checked: false,
+			body: value,
+		};
 		handleSend(data);
+		setValue("");
 	};
 	return (
 		<form
-			onKeyDown={(e) => {
-				if (e.code === "Enter") {
-					handleSubmit(onSubmit);
-				}
-			}}
 			onKeyUp={(e) => {
 				if (e.code === "Enter") {
-					setValue("");
+					handleSubmit(onSubmit);
 				}
 			}}
 			className="input"

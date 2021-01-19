@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 //MIXINS
-@mixin flex($flex, $direction, $align, $justify) {
-	display: $flex;
+@mixin flex($direction, $align, $justify) {
+	display: flex;
 	flex-direction: $direction;
 	align-items: $align;
 	justify-content: $justify;
@@ -30,6 +30,8 @@ body {
 	max-width: 1440px;
 	margin: 0 auto;
 	font-family: Inter;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .wrapper {

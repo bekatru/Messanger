@@ -3,20 +3,19 @@ import Avatar from "./Avatar";
 
 // icons
 import logo from "../icons/logo.svg";
-import mssg from "../icons/message.svg";
+import messge from "../icons/message.svg";
 import bell from "../icons/notification.svg";
+import arrow from "../icons/arrow-down-white.svg";
 
 const Nav = ({ user }) => {
 	const { name, surname, company, notifications } = user;
-	const username = `${name} ${surname[0]}.`;
-	const avatar = <Avatar data={user} size={"L"} />;
 	return (
 		<header>
 			<div className="logo">
 				<img src={logo} alt="logo" />
 				<p className="logo_text">LOGO</p>
 			</div>
-
+			{/* Navigation */}
 			<nav>
 				<a className="active" href="/">
 					Команда
@@ -24,10 +23,10 @@ const Nav = ({ user }) => {
 				<a href="/">Задачи</a>
 				<a href="/">Календарь</a>
 			</nav>
-
+			{/* Notifications */}
 			<div className="notifications">
 				<div>
-					<img src={mssg} alt="messages" />
+					<img src={messge} alt="messages" />
 					<p>{notifications.messages}</p>
 				</div>
 				<div>
@@ -35,12 +34,13 @@ const Nav = ({ user }) => {
 					<p>{notifications.bell}</p>
 				</div>
 			</div>
-
-			{avatar}
+			{/* User Info */}
+			<Avatar data={user} size={"L"} />
 			<div className="userinfo">
-				<p className="username">{username}</p>
+				<p className="username">{`${name} ${surname[0]}.`}</p>
 				<p className="company">{company}</p>
 			</div>
+			<img src={arrow} alt="arrow" />
 		</header>
 	);
 };

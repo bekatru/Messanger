@@ -10,8 +10,8 @@ const Message = ({ users, message, user }) => {
 	const findUser = (id) => {
 		return users.find((user) => user.id === id);
 	};
-	const sender = findUser(message.sender);
 
+	// Render Message Info
 	const info = () => {
 		const status = message.checked ? (
 			<img className="check" width="20" src={checked} alt="checked" />
@@ -33,6 +33,7 @@ const Message = ({ users, message, user }) => {
 		);
 	};
 
+	// Render Quote
 	const quote = (data) => {
 		if (!data) return null;
 		const { name, surname } = findUser(data.sender);
@@ -46,14 +47,17 @@ const Message = ({ users, message, user }) => {
 			</div>
 		);
 	};
+
 	return (
-		<div className={`message`}>
-			{message.sender !== user && <Avatar data={sender} size="L" />}
-			<div className={`message_body ${message.sender === user ? "left" : ""}`}>
+		<div className={`message ${message.sender === user ? "left" : ""}`}>
+			{message.sender !== user && (
+				<Avatar data={findUser(message.sender)} size="L" />
+			)}
+			<div className={`message_body`}>
 				{quote(message.quote)}
 				<p>{message.body}</p>
-				{info()}
 			</div>
+			{info()}
 		</div>
 	);
 };
