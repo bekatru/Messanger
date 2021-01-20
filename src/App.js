@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 // Components
 import Nav from "./components/Nav";
 import SearchBar from "./components/SearchBar";
-import ChatList from "./components/ChatList";
+import ChatList from "./components/Chatlist/ChatList";
 import Header from "./components/Header";
 import Thread from "./components/Thread";
 import Input from "./components/Input";
+
+//Utils
+import { fetchGET, fetchPOST } from "./utils";
 
 // Data
 import { store } from "./data/data";
@@ -17,53 +20,30 @@ const App = () => {
 
 	// Fetch Data
 	useEffect(() => {
-		fetch("http://localhost:3030/")
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				setState(data);
-			})
-			.catch((err) => console.log(err));
+		fetchGET("/").then((data) => setState(data));
 	}, []);
 
 	const handleSend = (data) => {
-		fetch("http://localhost:3030/", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(data),
-		})
-			.then((res) => res.json())
-			.then((data) => setState(data))
-			.catch((err) => console.log(err));
+		fetchPOST("/", data).then((data) => setState(data));
 	};
 
-	let application = <div>Loading</div>;
-	application = (
+	const { user, users, groups } = state;
+	return (
 		<div className="App">
-			<Nav user={state.user} />
-			<div className="wrapper">
+			<Nav user={user} />
+			<div style={{ display: "flex" }}>
 				<div>
 					<SearchBar setQuery={(query) => setQuery(query)} />
-					<ChatList
-						data={state}
-						query={query}
-						// setActiveChat={() => setActiveChat(data)}
-					/>
+					<ChatList data={state} query={query} />
 				</div>
 				<div>
-					<Header data={state.groups[0]} />
-					<Thread
-						chat={state.groups[0]}
-						users={state.users}
-						user={state.user.id}
-					/>
+					<Header data={groups[0]} />
+					<Thread chat={groups[0]} users={users} user={user.id} />
 					<Input handleSend={(data) => handleSend(data)} />
 				</div>
 			</div>
 		</div>
 	);
-
-	return application;
 };
 
 export default App;

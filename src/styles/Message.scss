@@ -1,55 +1,23 @@
 .message {
 	@include flex(row, flex-start, flex-start);
 	margin-top: 22px;
-	position: relative;
+	&.left {
+		align-self: flex-end;
+	}
 
 	p {
-		font: normal normal normal 14px/20px Inter;
-		letter-spacing: 0px;
+		font-size: 14px;
+		line-height: 20px;
 	}
 	&_body {
 		box-sizing: border-box;
 		width: 450px;
 		padding: 15px;
+		padding-bottom: 8px;
 		margin-left: 12px;
 		border-radius: 8px;
 		background: white;
 		box-shadow: 0px 1px 2px #00000029;
-	}
-	&.left {
-		align-self: flex-end;
-	}
-}
-
-.info {
-	@include flex(row, center, flex-end);
-	position: absolute;
-	bottom: 8px;
-	right: 8px;
-	&_time {
-		font: normal normal normal 12px/20px Inter;
-		letter-spacing: 0px;
-		color: #707070;
-		opacity: 0.4;
-		margin-left: 15px;
-	}
-
-	&_likes {
-		@include flex(row, center, center);
-		margin-left: 15px;
-		width: 36px;
-		height: 20px;
-		background: #e2e2e240 0% 0% no-repeat padding-box;
-		border-radius: 8px;
-		text-align: center;
-		font: normal normal normal 12px/20px Inter;
-	}
-	&_status {
-		margin-left: 15px;
-	}
-
-	.check {
-		margin-left: 15px;
 	}
 }
 
@@ -58,31 +26,50 @@
 	padding-left: 10px;
 	margin-bottom: 8px;
 
+	p {
+		font-size: 12px;
+	}
+
 	&_header {
 		@include flex(row, center, flex-start);
 
 		&_name {
-			font: normal normal normal 12px/20px Inter;
 			color: $primary_blue;
 		}
 
 		&_date {
-			font: normal normal normal 12px/20px Inter;
-			letter-spacing: 0px;
-			color: #707070;
-			opacity: 0.4;
+			color: #70707040;
 			margin: 0 8px;
 		}
 	}
+}
 
-	&_body {
-		font: normal normal normal 12px/20px Inter;
+.info {
+	@include flex(row, center, flex-end);
+
+	&_time {
+		font-size: 12px;
+		color: #70707040;
+		margin-left: 15px;
+	}
+
+	&_likes {
+		@include flex(row, center, center);
+		width: 36px;
+		height: 20px;
+		background: #e2e2e240;
+		border-radius: 8px;
+		font-size: 12px;
+	}
+
+	&_check {
+		width: 20px;
+		margin-left: 15px;
 	}
 }
 
 .timecheck {
-	text-align: center;
-	font: normal normal normal 14px/20px Inter;
+	font-size: 14px;
 	opacity: 0.4;
 	align-self: center;
 	margin: 28px auto 6px;

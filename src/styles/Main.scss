@@ -9,12 +9,6 @@
 	justify-content: $justify;
 }
 
-@mixin icon($height, $width, $url) {
-	height: $height;
-	width: $width;
-	background-image: $url;
-}
-
 //Colors
 $primary_blue: #007af4;
 $primary_dark_blue: #1b3a59;
@@ -24,6 +18,9 @@ $primary_red: #d61a1a;
 * {
 	margin: 0;
 	padding: 0;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 body {
@@ -34,6 +31,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wrapper {
-	display: flex;
+input {
+	border: none;
+	outline: none;
 }

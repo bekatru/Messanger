@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "./Avatar";
+import Avatar from "./Shared/Avatar";
 
 // icons
 import settings from "../icons/settings.svg";

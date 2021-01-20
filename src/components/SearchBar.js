@@ -16,20 +16,19 @@ const SearchBar = ({ setQuery }) => {
 					setQuery(e.target.value);
 				}}
 			/>
-			<div className="icons">
+			<div>
 				{value.length ? (
 					<img
 						onClick={() => {
 							setValue("");
 							setQuery("");
 						}}
-						className="clear"
 						src={clear}
 						alt="clear"
 					/>
 				) : null}
-				<img className="search" src={search} alt="clear" />
-				<img className="edit" src={edit} alt="clear" />
+				<img src={search} alt="search" />
+				<img src={edit} alt="edit" />
 			</div>
 		</div>
 	);

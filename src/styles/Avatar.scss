@@ -3,6 +3,9 @@
 	background-color: $primary_blue;
 	border-radius: 50%;
 	color: white;
+	width: 23px;
+	height: 23px;
+	letter-spacing: -0.33px;
 
 	&.L {
 		width: 38px;
@@ -10,9 +13,10 @@
 		border: 2px solid #ffffff33;
 	}
 	&.S {
-		width: 23px;
-		height: 23px;
-		font: normal normal normal 11px/14px Inter;
-		letter-spacing: -0.33px;
+		font-size: 11px;
+	}
+
+	&.T {
+		font-size: 9px;
 	}
 }

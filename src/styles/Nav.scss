@@ -3,31 +3,27 @@ header {
 	background-color: $primary_dark_blue;
 	height: 70px;
 	padding: 0 30px;
+}
 
-	.logo {
-		@include flex(row, center, space-between);
-		width: 120px;
+.logo {
+	@include flex(row, center, space-between);
+	width: 120px;
+	font-size: 28px;
+	line-height: 34px;
+	color: white;
+}
 
-		&_text {
-			font: normal normal normal 28px/34px Inter;
-			color: #ffffff;
-		}
-	}
-
-	nav {
-		margin-left: 42px;
-		a {
-			height: 100%;
-			color: #ffffff;
-			text-decoration: none;
-			padding: 25px 20px;
-			font-weight: 500;
-			&:hover {
-				background-color: #ffffff1a;
-			}
-			&.active {
-				background-color: #ffffff1a;
-			}
+nav {
+	margin-left: 42px;
+	a {
+		color: #ffffff;
+		text-decoration: none;
+		padding: 25px 20px;
+		font-weight: 500;
+		&:hover,
+		&.active {
+			background-color: #ffffff1a;
+			transition: all ease-in-out 100ms;
 		}
 	}
 }
@@ -37,6 +33,7 @@ header {
 	width: 100px;
 	margin-left: auto;
 	margin-right: 30px;
+
 	div {
 		position: relative;
 		height: 32px;
@@ -64,19 +61,17 @@ header {
 .userinfo {
 	@include flex(column, flex-start, space-around);
 	height: 40px;
-	margin-left: 10px;
+	margin: 0 10px;
 }
 
 .username {
-	font: normal normal 600 14px/17px Inter;
-	letter-spacing: 0px;
+	font-size: 14px;
+	font-weight: 600;
 	color: white;
 }
 
 .company {
-	text-align: left;
-	font: normal normal normal 12px/15px Inter;
-	letter-spacing: 0px;
-	color: #ffffff;
+	font-size: 12px;
+	color: white;
 	opacity: 0.8;
 }

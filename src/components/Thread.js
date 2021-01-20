@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Message from "./Message";
+import Message from "./Message/Message";
 
 const Thread = ({ chat, users, user }) => {
 	const scroll = useRef(null);
@@ -14,24 +14,20 @@ const Thread = ({ chat, users, user }) => {
 
 	return (
 		<div ref={scroll} className="thread">
-			{chat.messages.map((message) => {
-				if (message.timecheck) {
-					return (
-						<div key="timecheck" className="timecheck">
-							Сегодня, 4 ноября
-						</div>
-					);
-				} else {
-					return (
-						<Message
-							key={message.id}
-							message={message}
-							users={users}
-							user={user}
-						/>
-					);
-				}
-			})}
+			{chat.messages.map((message) =>
+				message.timecheck ? (
+					<div key="timecheck" className="timecheck">
+						4 ноября
+					</div>
+				) : (
+					<Message
+						key={message.id}
+						message={message}
+						users={users}
+						user={user}
+					/>
+				)
+			)}
 		</div>
 	);
 };

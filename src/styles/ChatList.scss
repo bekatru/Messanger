@@ -5,37 +5,37 @@
 	border: 1px solid #1b3a5933;
 	overflow: scroll;
 
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
 	p {
-		font: normal normal normal 11px/14px Inter;
+		font-size: 11px;
 		letter-spacing: 1.54px;
 		margin: 12px 0 6px 0;
+		cursor: pointer;
 	}
 }
 
 .chat {
 	@include flex(row, center, flex-start);
+	height: 24px;
 	margin: 12px 0;
+
 	p {
-		font: normal normal normal 14px/24px Inter;
+		cursor: pointer;
+		font-size: 14px;
+		letter-spacing: 0px;
 		margin: 0 0 0 8px;
 		&:hover {
 			font-weight: 700;
 		}
-		cursor: pointer;
+
+		img {
+			cursor: pointer;
+			margin-left: auto;
+			width: 15px;
+			transform: rotate(180deg);
+		}
 	}
 
 	&_children {
 		padding-left: 25px;
 	}
-}
-
-.dropdown {
-	margin-left: auto;
-	width: 15px;
-	transform: rotate(180deg);
-	cursor: pointer;
 }

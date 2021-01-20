@@ -2,13 +2,13 @@
 	@include flex(row, center, flex-start);
 	box-sizing: border-box;
 	padding: 0 30px;
-	width: 1090px;
 	height: 78px;
 	border: 1px solid #1b3a5933;
 }
 
 .tools {
 	@include flex(row, center, space-between);
-	opacity: 0.25;
+	width: 80px;
 	margin-left: auto;
+	opacity: 0.25;
 }

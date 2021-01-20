@@ -1,19 +1,25 @@
 import React from "react";
-import Avatar from "./Avatar";
+import Avatar from "./Shared/Avatar";
 
 // icons
 import logo from "../icons/logo.svg";
 import messge from "../icons/message.svg";
-import bell from "../icons/notification.svg";
+import bells from "../icons/notification.svg";
 import arrow from "../icons/arrow-down-white.svg";
 
 const Nav = ({ user }) => {
-	const { name, surname, company, notifications } = user;
+	const {
+		name,
+		surname,
+		company,
+		notifications: { messages, bell },
+	} = user;
 	return (
 		<header>
+			{/* LOGO */}
 			<div className="logo">
 				<img src={logo} alt="logo" />
-				<p className="logo_text">LOGO</p>
+				LOGO
 			</div>
 			{/* Navigation */}
 			<nav>
@@ -26,12 +32,12 @@ const Nav = ({ user }) => {
 			{/* Notifications */}
 			<div className="notifications">
 				<div>
-					<img src={messge} alt="messages" />
-					<p>{notifications.messages}</p>
+					<img src={messge} alt="msgs" />
+					<p>{messages}</p>
 				</div>
 				<div>
-					<img src={bell} alt="bell" />
-					<p>{notifications.bell}</p>
+					<img src={bells} alt="bell" />
+					<p>{bell}</p>
 				</div>
 			</div>
 			{/* User Info */}

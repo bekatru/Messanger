@@ -10,7 +10,7 @@
 	&_message {
 		border: none;
 		outline: none;
-		font: normal normal normal 14px/20px Inter;
+		font-size: 12px;
 		width: 765px;
 		height: 40px;
 	}
@@ -18,7 +18,7 @@
 		@include flex(row, center, space-between);
 		width: 107+67+20px;
 		img {
-			opacity: 0.4;
+			opacity: 0.25;
 		}
 	}
 	button {
@@ -29,7 +29,7 @@
 
 		border: 1px solid #007af4;
 		cursor: pointer;
-		font: normal normal medium 14px/17px Inter;
+		font-size: 14px;
 		background-color: #007af4;
 		border-radius: 5px;
 		transition: all ease-in 100ms;
