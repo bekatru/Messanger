@@ -21,6 +21,17 @@ const App = () => {
 	// Fetch Data
 	useEffect(() => {
 		fetchGET("/").then((data) => setState(data));
+		setTimeout(() => {
+			handleSend({
+				id: "#" + Math.random().toString(20).substr(2, 6),
+				sender: "#ба",
+				likes: 0,
+				datetime: Date(),
+				quote: null,
+				checked: false,
+				body: "Здравствуйте, Валерий! Я выполнил тестовое задание.",
+			});
+		}, 5000);
 	}, []);
 
 	const handleSend = (data) => {

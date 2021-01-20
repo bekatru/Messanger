@@ -46,7 +46,7 @@ const Nav = ({ user }) => {
 				<p className="username">{`${name} ${surname[0]}.`}</p>
 				<p className="company">{company}</p>
 			</div>
-			<img src={arrow} alt="arrow" />
+			<img width="20" src={arrow} alt="arrow" />
 		</header>
 	);
 };

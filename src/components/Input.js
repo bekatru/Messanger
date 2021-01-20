@@ -38,7 +38,7 @@ const Input = ({ handleSend }) => {
 				ref={register}
 				className="input_message"
 				name="message"
-				placeholder="Написать Сообщение..."
+				placeholder="Написать cообщение..."
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
 			/>

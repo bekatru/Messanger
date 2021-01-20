@@ -1,14 +1,15 @@
 .chatlist {
 	box-sizing: border-box;
 	height: 738px;
-	padding: 0 25px;
+	padding: 0 29px;
 	border: 1px solid #1b3a5933;
 	overflow: scroll;
+	width: 350px;
 
 	p {
 		font-size: 11px;
 		letter-spacing: 1.54px;
-		margin: 12px 0 6px 0;
+		margin: 21px 0 6px 0;
 		cursor: pointer;
 	}
 }
@@ -16,7 +17,7 @@
 .chat {
 	@include flex(row, center, flex-start);
 	height: 24px;
-	margin: 12px 0;
+	margin: 11px 0;
 
 	p {
 		cursor: pointer;
@@ -26,16 +27,16 @@
 		&:hover {
 			font-weight: 700;
 		}
-
-		img {
-			cursor: pointer;
-			margin-left: auto;
-			width: 15px;
-			transform: rotate(180deg);
-		}
+	}
+	img {
+		margin-right: -3px;
+		cursor: pointer;
+		margin-left: auto;
+		width: 17px;
+		transform: rotate(180deg);
 	}
 
 	&_children {
-		padding-left: 25px;
+		padding-left: 24px;
 	}
 }

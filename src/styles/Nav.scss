@@ -1,13 +1,13 @@
 header {
 	@include flex(row, center, flex-start);
 	background-color: $primary_dark_blue;
-	height: 70px;
-	padding: 0 30px;
+	height: 71px;
+	padding: 0 25px 0 30px;
 }
 
 .logo {
 	@include flex(row, center, space-between);
-	width: 120px;
+	width: 121px;
 	font-size: 28px;
 	line-height: 34px;
 	color: white;
@@ -17,6 +17,7 @@ nav {
 	margin-left: 42px;
 	a {
 		color: #ffffff;
+		letter-spacing: 0.1px;
 		text-decoration: none;
 		padding: 25px 20px;
 		font-weight: 500;
@@ -30,9 +31,9 @@ nav {
 
 .notifications {
 	@include flex(row, center, space-between);
-	width: 100px;
+	width: 87px;
 	margin-left: auto;
-	margin-right: 30px;
+	margin-right: 38px;
 
 	div {
 		position: relative;
@@ -43,11 +44,11 @@ nav {
 		}
 
 		p {
-			@include flex(row, center, center);
+			@include flex(column, center, center);
 			height: 21px;
 			width: 21px;
 			position: absolute;
-			top: -7.5px;
+			top: -5px;
 			right: -15px;
 			background-color: $primary_red;
 			border: 2px solid $primary_dark_blue;
@@ -61,17 +62,21 @@ nav {
 .userinfo {
 	@include flex(column, flex-start, space-around);
 	height: 40px;
-	margin: 0 10px;
+	margin-right: 5px;
+	margin-left: 9px;
 }
 
 .username {
+	margin-top: 1px;
 	font-size: 14px;
+	line-height: 17px;
 	font-weight: 600;
 	color: white;
 }
 
 .company {
 	font-size: 12px;
+	line-height: 15px;
 	color: white;
 	opacity: 0.8;
 }

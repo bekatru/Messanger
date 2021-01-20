@@ -28,7 +28,7 @@ const SearchBar = ({ setQuery }) => {
 					/>
 				) : null}
 				<img src={search} alt="search" />
-				<img src={edit} alt="edit" />
+				<img src={edit} alt="edit" style={{ opacity: 0.2 }} />
 			</div>
 		</div>
 	);
