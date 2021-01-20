@@ -1,0 +1,82 @@
+header {
+	@include flex(row, center, flex-start);
+	background-color: $primary_dark_blue;
+	height: 71px;
+	padding: 0 25px 0 30px;
+}
+
+.logo {
+	@include flex(row, center, space-between);
+	width: 121px;
+	font-size: 28px;
+	line-height: 34px;
+	color: white;
+}
+
+nav {
+	margin-left: 42px;
+	a {
+		color: #ffffff;
+		letter-spacing: 0.1px;
+		text-decoration: none;
+		padding: 25px 20px;
+		font-weight: 500;
+		&:hover,
+		&.active {
+			background-color: #ffffff1a;
+			transition: all ease-in-out 100ms;
+		}
+	}
+}
+
+.notifications {
+	@include flex(row, center, space-between);
+	width: 87px;
+	margin-left: auto;
+	margin-right: 38px;
+
+	div {
+		position: relative;
+		height: 32px;
+
+		img {
+			width: 32px;
+		}
+
+		p {
+			@include flex(column, center, center);
+			height: 21px;
+			width: 21px;
+			position: absolute;
+			top: -5px;
+			right: -15px;
+			background-color: $primary_red;
+			border: 2px solid $primary_dark_blue;
+			border-radius: 50%;
+			font-size: 10px;
+			color: white;
+		}
+	}
+}
+
+.userinfo {
+	@include flex(column, flex-start, space-around);
+	height: 40px;
+	margin-right: 5px;
+	margin-left: 9px;
+}
+
+.username {
+	margin-top: 1px;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 600;
+	color: white;
+}
+
+.company {
+	font-size: 12px;
+	line-height: 15px;
+	color: white;
+	opacity: 0.8;
+}

@@ -1,0 +1,11 @@
+.thread {
+	@include flex(column, flex-start, flex-start);
+	box-sizing: border-box;
+	height: 650px;
+	border: 1px solid #1b3a5933;
+	border-left: none;
+	border-bottom: none;
+	padding: 0 75px 50px 19px;
+	background-color: #f5f9fc;
+	overflow: scroll;
+}

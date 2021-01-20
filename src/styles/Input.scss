@@ -1,0 +1,49 @@
+.input {
+	@include flex(row, center, space-between);
+	box-sizing: border-box;
+	width: 1090px;
+	height: 66px;
+	padding-right: 23px;
+	padding-left: 38px;
+	border: 1px solid #1b3a5933;
+	border-left: none;
+	border-top: none;
+
+	&_message {
+		border: none;
+		outline: none;
+		font-size: 14px;
+		letter-spacing: 0.4px;
+		width: 765px;
+		height: 40px;
+	}
+	&_tools {
+		@include flex(row, center, space-between);
+		width: 110+66+20px;
+		img {
+			opacity: 0.25;
+		}
+	}
+	button {
+		width: 107px;
+		height: 40px;
+		color: white;
+		outline: none;
+
+		border: 1px solid #007af4;
+		cursor: pointer;
+		font-size: 14px;
+		letter-spacing: 0.6px;
+		background-color: #007af4;
+		border-radius: 5px;
+		transition: all ease-in 100ms;
+	}
+
+	button:hover {
+		background: none;
+		color: #007af4;
+	}
+	button:active {
+		transform: scale(0.98);
+	}
+}

@@ -1,0 +1,20 @@
+.searchbar {
+	@include flex(row, center, space-between);
+	box-sizing: border-box;
+	width: 350px;
+	height: 56px;
+	border: 1px solid #1b3a5933;
+	border-bottom: none;
+	border-top: none;
+	padding: 0 23px;
+
+	div {
+		@include flex(row, center, flex-end);
+	}
+	img {
+		width: 20px;
+		padding-top: 1px;
+		margin-left: 20px;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,22 @@
+.avatar {
+	@include flex(row, center, center);
+	background-color: $primary_blue;
+	border-radius: 50%;
+	color: white;
+	width: 23px;
+	height: 23px;
+	letter-spacing: -0.33px;
+
+	&.L {
+		width: 37px;
+		height: 37px;
+		border: 2px solid #ffffff33;
+	}
+	&.S {
+		font-size: 11px;
+	}
+
+	&.T {
+		font-size: 9px;
+	}
+}

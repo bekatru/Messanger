@@ -1,10 +1,10 @@
-@import "./Layout.scss";
-
+@import "./src/styles/Main.scss";
+@import "./src/styles/Mixins.scss";
+@import "./src/styles/Nav.scss";
 @import "./src/styles/Avatar.scss";
 @import "./src/styles/ChatList.scss";
 @import "./src/styles/Header.scss";
 @import "./src/styles/Input.scss";
-@import "./src/styles/Message.scss";
-@import "./src/styles/Nav.scss";
 @import "./src/styles/SearchBar.scss";
 @import "./src/styles/Thread.scss";
+@import "./src/styles/Message.scss";

@@ -1,0 +1,42 @@
+.chatlist {
+	box-sizing: border-box;
+	height: 738px;
+	padding: 0 29px;
+	border: 1px solid #1b3a5933;
+	overflow: scroll;
+	width: 350px;
+
+	p {
+		font-size: 11px;
+		letter-spacing: 1.54px;
+		margin: 21px 0 6px 0;
+		cursor: pointer;
+	}
+}
+
+.chat {
+	@include flex(row, center, flex-start);
+	height: 24px;
+	margin: 11px 0;
+
+	p {
+		cursor: pointer;
+		font-size: 14px;
+		letter-spacing: 0px;
+		margin: 0 0 0 8px;
+		&:hover {
+			font-weight: 700;
+		}
+	}
+	img {
+		margin-right: -3px;
+		cursor: pointer;
+		margin-left: auto;
+		width: 17px;
+		transform: rotate(180deg);
+	}
+
+	&_children {
+		padding-left: 24px;
+	}
+}

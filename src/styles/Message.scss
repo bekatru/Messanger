@@ -1,0 +1,83 @@
+.message {
+	@include flex(row, flex-start, flex-start);
+	margin-top: 22px;
+	&.left {
+		align-self: flex-end;
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	&_body {
+		box-sizing: border-box;
+		word-wrap: break-word;
+		max-width: 452px;
+		padding: 15px;
+		padding-bottom: 8px;
+		margin-left: 12px;
+		border-radius: 8px;
+		background: white;
+		box-shadow: 0px 1px 2px #00000029;
+	}
+}
+
+.quote {
+	border-left: 1px solid $primary_blue;
+	padding-left: 10px;
+	margin-bottom: 8px;
+
+	p {
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	&_header {
+		@include flex(row, center, flex-start);
+		margin-bottom: -2px;
+
+		&_name {
+			color: $primary_blue;
+		}
+
+		&_date {
+			color: #70707040;
+			margin: 0 8px;
+		}
+	}
+}
+
+.info {
+	@include flex(row, center, flex-end);
+	margin-right: -8px;
+	p {
+		font-size: 12px;
+	}
+
+	&_time {
+		font-size: 8px;
+		color: #70707040;
+		margin-left: 15px;
+	}
+
+	&_likes {
+		@include flex(row, center, center);
+		width: 36px;
+		height: 20px;
+		background: #e2e2e240;
+		border-radius: 8px;
+		font-size: 12px;
+	}
+
+	&_check {
+		width: 20px;
+		margin-left: 10px;
+	}
+}
+
+.timecheck {
+	font-size: 14px;
+	opacity: 0.4;
+	align-self: center;
+	margin: 28px auto 6px;
+}
