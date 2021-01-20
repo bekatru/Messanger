@@ -12,4 +12,4 @@ This will install all the required packages.
 
 ### `npm run dev`
 
-This will run the client on `localhost:300` and server on `localhost:3030`, so make sure nothin g is running there.
+This will run the client on `localhost:300` and server on `localhost:3030`, so make sure nothing is running there.
